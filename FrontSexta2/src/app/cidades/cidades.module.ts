@@ -10,10 +10,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CidadesCadastroComponent } from './cidades-cadastro/cidades-cadastro.component';
-import { CidadesPesquisaComponent } from './cidades-pesquisa/cidades-pesquisa.component';
+import {DropdownModule} from 'primeng/dropdown';
+
 
 @NgModule({
-  declarations: [CidadesCadastroComponent, CidadesPesquisaComponent],
+  declarations: [CidadesCadastroComponent],
   imports: [
     CommonModule,
     InputTextModule,
@@ -23,10 +24,10 @@ import { CidadesPesquisaComponent } from './cidades-pesquisa/cidades-pesquisa.co
     ToastModule,
     ConfirmDialogModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    DropdownModule
   ],
   exports: [
-    CidadesPesquisaComponent,
     CidadesCadastroComponent
   ],
   providers: [

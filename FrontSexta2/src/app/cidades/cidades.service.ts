@@ -15,25 +15,23 @@ export class CidadesService {
     private http: HttpClient
   ) { }
 
-  pesquisar(filtro: any):Promise<any>{
-    if(filtro.nome){
-      this.cidadesURLFiltro = this.cidadesURL+'/filtro?nome='+filtro.nome;
-    }else{
-      this.cidadesURLFiltro = this.cidadesURL;
-    };
-    return this.http.get<any>(this.cidadesURLFiltro).toPromise();
+  pesquisar(): Promise<any> {
+    return this.http.get<any>(this.cidadesURL).toPromise();
+  }
+
+  listarUf(): Promise<any> {
+    return this.http.get<any>('http://localhost:8080/estados').toPromise();
   }
 
   excluir(id:number):Promise<void>{
-    return this.http.delete(this.cidadesURL+'/'+id).toPromise().then(()=> null);
+    return this.http.delete(this.cidadesURL+'/'+id)
+    .toPromise()
+    .then(() => null);
   }
 
-  filtrar(name:string){
-    return this.http.get<any>(this.cidadesURL+'?nome'+name).toPromise().then(()=>null);
-  }
-
-  adicionar(cid: Cidade): Promise<any>{
-    return this.http.post(this.cidadesURL, cid).toPromise();
+  adicionar(cidade: Cidade): Promise<any>{
+    return this.http.post(this.cidadesURL, cidade)
+    .toPromise();
   }
 
   alterar(cidade: Cidade): Promise<any>{

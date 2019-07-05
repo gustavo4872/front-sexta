@@ -1,8 +1,8 @@
-import {EstadosService} from './estados.service';
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {EstadosCadastroComponent} from './estados-cadastro/estados-cadastro.component';
-import {EstadosPesquisaComponent} from './estados-pesquisa/estados-pesquisa.component';
+import { EventosService } from './eventos.service';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { EventosPesquisaComponent } from './eventos-pesquisa/eventos-pesquisa.component';
+import { EventosCadastroComponent } from './eventos-cadastro/eventos-cadastro.component';
 
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
@@ -14,7 +14,7 @@ import {FormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [EstadosCadastroComponent, EstadosPesquisaComponent],
+  declarations: [EventosPesquisaComponent, EventosCadastroComponent],
   imports: [
     CommonModule,
     InputTextModule,
@@ -27,11 +27,11 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   exports: [
-    EstadosPesquisaComponent,
-    EstadosCadastroComponent
+    EventosPesquisaComponent,
+    EventosCadastroComponent
   ],
   providers: [
-    EstadosService
+    EventosService
   ]
 })
-export class EstadosModule { }
+export class EventosModule { }

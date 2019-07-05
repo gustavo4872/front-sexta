@@ -10,7 +10,7 @@
 
       <div class="ui-g-12">
         <h1>
-          Estados
+          Atletas
         </h1>
       </div>
 
@@ -27,7 +27,7 @@
   </form>
   <div class="ui-g">
       <div class="ui-g-12">
-          <p-table [value]="estados" [paginator]="true" [rows]="5" [responsive]="true">
+          <p-table [value]="atletas" [paginator]="true" [rows]="5" [responsive]="true">
               <ng-template pTemplate="header" >
                   <tr>
                     <th class="col-id-header">Id</th>
@@ -36,13 +36,13 @@
                   </tr>
                </ng-template>
 
-               <ng-template pTemplate="body" let-est>
+               <ng-template pTemplate="body" let-atl>
                   <tr>
-                    <td class="col-id">{{est.id}}</td>
-                    <td>{{est.nome}}</td>
+                    <td class="col-id">{{atl.id}}</td>
+                    <td>{{atl.nome}}</td>
                     <td class="col-acoes">
-                        <button pButton icon="pi pi-pencil" pTooltip="Editar"  tooltipPosition="top" showDelay="1000"  class="ui-button-info" [routerLink]="['/estados', est.id]"></button>
-                        <button pButton icon="pi pi-trash"  pTooltip="Excluir" tooltipPosition="top" showDelay="1000"  (click)="confirmarExclusao(est)" class="ui-button-danger"></button>
+                        <button pButton icon="pi pi-pencil" pTooltip="Editar"  tooltipPosition="top" showDelay="1000"  class="ui-button-info" [routerLink]="['/atletas', atl.id]"></button>
+                        <button pButton icon="pi pi-trash"  pTooltip="Excluir" tooltipPosition="top" showDelay="1000"  (click)="confirmarExclusao(atl)" class="ui-button-danger"></button>
                     </td>
                   </tr>
                 </ng-template>
@@ -51,7 +51,8 @@
       </div>
 
       <div class="ui-g-12">
-          <a pButton label="Novo Estado" routerLink="/estados/novo"></a>
+          <a pButton label="Novo Atleta" routerLink="/atletas/novo"></a>
+          <a pButton label="Inscrever Atleta" routerLink="/atletas/inscrever"></a>
       </div>
 
   </div>

@@ -24,6 +24,10 @@ export class CategoriasService {
     return this.http.get<any>(this.categoriasURLFiltro).toPromise();
   }
 
+  listarEventos(): Promise<any> {
+    return this.http.get<any>('http://localhost:8080/eventos').toPromise();
+  }
+
   excluir(id:number):Promise<void>{
     return this.http.delete(this.categoriasURL+'/'+id).toPromise().then(()=> null);
   }

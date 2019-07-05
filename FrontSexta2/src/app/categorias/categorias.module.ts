@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoriasCadastroComponent } from './categorias-cadastro/categorias-cadastro.component'
 import { CategoriasPesquisaComponent } from './categorias-pesquisa/categorias-pesquisa.component';
-
+import {DropdownModule} from 'primeng/dropdown';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
@@ -24,7 +24,8 @@ import { RouterModule } from '@angular/router';
     ToastModule,
     ConfirmDialogModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    DropdownModule
   ],
   exports: [
     CategoriasPesquisaComponent,

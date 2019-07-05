@@ -1,0 +1,27 @@
+<p-toast></p-toast>
+
+<div class="container">
+
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+    <div class="ui-g">
+      <div class="ui-g-12 ui-md-9 ui-fluid">
+        <p-pickList [source]="categorias" [target]="atleta.categorias"
+        sourceHeader="Categorias" targetHeader="Selecionadas"
+        [responsive]="true"  [dragdrop]="true"
+        [showSourceControls]="false" [showTargetControls]="false">
+          <ng-template let-cat pTemplate="item">
+              <div class="ui-helper-clearfix">
+                  <div style="font-size:12px;float:right;margin:5px 5px 0 0">{{cat.nome}}</div>
+              </div>
+          </ng-template>
+      </p-pickList>
+      </div>
+
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+      </div>
+
+    </div>
+  </form>
+
+</div>

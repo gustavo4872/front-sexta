@@ -1,4 +1,4 @@
-export class Estado{
+export class Evento{
   id: number;
   nome: string;
 }
